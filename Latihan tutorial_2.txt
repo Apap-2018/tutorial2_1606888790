@@ -1,0 +1,43 @@
+Latihan Project Viral
+1. Ganti baris @RequestMapping(“/viral”) menjadi @RequestMapping(“/viral2jari”).
+Kemudian run kembali.
+	a. Apakah terjadi compile error? 
+		Ya
+	b. Coba akses localhost:8080/viral, berikan alasan dan jelaskan apa yang terjadi.
+		Halaman berisi "Whitelabel Error Page", karena ketika kita merubah @RequestMapping menjadi viral2jari, link viral menjadi tidak ada
+		tulisan "Mashook Pak Ekoo!!" sekarang muncul di http://localhost:8080/viral2jari
+	c. Apakah Kegunaan @RequestMapping(“/viral”)
+		untuk menentukan link halaman
+	
+Kembalikan menjadi @RequestMapping(“/viral”)
+
+2. Ganti nama method index() menjadi nama method viral()
+	a. Apakah terjadi compile error? 
+		Tidak
+	b. Coba akses localhost:8080/viral, berikan alasan dan jelaskan apa yang terjadi.
+		Halaman terdapat tulisan "Mashook Pak Ekoo!!", tidak terjadi apa-apa.
+		Karena yang kita ubah adalah nama methodnya saja, nama method bisa apa saja.
+	
+Kembalikan menjadi index()
+
+3. Ganti string return type menjadi menjadi return “viral2jari”
+	a. Apakah terjadi compile error?
+		Ya
+	b. Coba akses localhost:8080/viral, berikan alasan dan jelaskan apa yang terjadi.
+		Halaman berisi "Whitelabel Error Page", karena tidak ada dalam template viral2jari.html
+	c. Apakah kegunaan return type pada method controller tersebut?
+		Untuk memilih template html mana yang digunakan 
+	
+Kembalikan return type menjadi “viral”
+=======================================
+Latihan​ ​Request​ ​Parameter
+Setiap ada perubahan pada kode, selalu usahakan run ulang
+1. Mengapa tulisan “In My feeling” pada thymeleaf challenge tidak pernah muncul di browser?
+	Karena tulisan "In My feeling" ter-override dengan th:text="", th:text="" prioritasnya 
+2. Ubah nilai anotasi Request Mapping “/challenge” menjadi “/viral/challenge”. Deskripsikan hasil pada browser dan kembalikan ke bentuk sebelumnya!
+	Yang awalnya muncul di http://localhost:8080/challenge
+
+3. Akses localhost:8080/challenge.
+a. Deskripsikan hasilnya
+b. Ubah methodnya menjadi seperti di bawah ini, deskripsikan lalu kembalikan ke bentuk awal!
+c. Ubah methodnya menjadi seperti di bawah ini, deskripsikan lalu kembalikan ke bentuk awal!
