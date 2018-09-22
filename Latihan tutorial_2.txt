@@ -35,9 +35,31 @@ Setiap ada perubahan pada kode, selalu usahakan run ulang
 1. Mengapa tulisan “In My feeling” pada thymeleaf challenge tidak pernah muncul di browser?
 	Karena tulisan "In My feeling" ter-override dengan th:text="", th:text="" prioritasnya 
 2. Ubah nilai anotasi Request Mapping “/challenge” menjadi “/viral/challenge”. Deskripsikan hasil pada browser dan kembalikan ke bentuk sebelumnya!
-	Yang awalnya muncul di http://localhost:8080/challenge
+	Yang awalnya muncul di http://localhost:8080/challenge?name=kiki pindah ke alamat http://localhost:8080/viral/challenge?name=kiki
+	Dan halaman http://localhost:8080/challenge?name=kiki menjadi error type=Not Found
 
 3. Akses localhost:8080/challenge.
 a. Deskripsikan hasilnya
+	Halaman berisi "Whitelabel Error Page", error type=Bad Request
+	Ini terjadi karena parameter 'name' tidak diisi atau null
 b. Ubah methodnya menjadi seperti di bawah ini, deskripsikan lalu kembalikan ke bentuk awal!
+	Halaman kembali seperti tampilan sebelumnya. Tetapi karena param 'name' tidak diisi, 
+	tulisan yang ditampilkan menjadi "null do you love me? .."
 c. Ubah methodnya menjadi seperti di bawah ini, deskripsikan lalu kembalikan ke bentuk awal!
+	Karena ditambahkan defaultValue = "kiki", meskipun param 'name' tidak kita set
+	saat mengakses halaman http://localhost:8080/challenge tulisan akan menjadi "kiki do you love me? .."
+===============================================
+Latihan​ ​Path Variable
+Setiap ada perubahan pada kode, selalu usahakan run ulang
+1. Akses localhost:8080/challenge/
+Apakah hasil dari halaman tersebut?
+	Halaman berisi "Whitelabel Error Page", error type=Bad Request
+	Ini terjadi karena parameter 'name' tidak diisi atau null
+	
+2. Ubah method challengePath menjadi seperti berikut
+Akses localhost:8080/challenge/
+Apakah hasil dari halaman tersebut?
+	Tulisan pada halaman menjadi "KB do you love me? .."
+3. Akses localhost:8080/challenge/kiki
+Apakah hasil dari halaman tersebut?	
+	Tulisan pada halaman menjadi "kiki do you love me? .."
